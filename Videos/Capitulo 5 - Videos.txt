@@ -1,0 +1,185 @@
+CAP 5
+VIDEO 1:
+Bem-vindos, aventureiros da programação! Você já se perguntou como os programas de computador ganham vida? Como transformamos linhas de código em sistemas poderosos e funcionais? 
+Bem, hoje é o seu dia de sorte, porque estamos prestes a mergulhar fundo no fascinante mundo da programação Java!
+Nesta aula, vamos desvendar o mistério por trás das classes e objetos em Java. 
+Vamos aprender a construir nossas próprias classes, definir os atributos, e em seguida, assistir à mágica acontecer quando criamos instâncias dessas classes.
+Prepare-se para uma jornada de descoberta, onde vamos transformar conceitos abstratos em realidade. 
+Então, pegue sua xícara de café, ajuste sua cadeira, e vamos codificar nosso próprio universo de classes e objetos em Java! 
+
+public class PersonagemMagico {
+    String nome;
+    String poderMagico;
+    int nivelEnergia;
+}
+public class Main {
+
+    public static void main(String[] args) {
+
+        //Criando um objeto do tipo Personagem Mágico
+        PersonagemMagico mago = new PersonagemMagico();
+
+        //Atribuindo valores aos atributos do objeto
+        mago.nome = "Gandalf";
+        mago.nivelEnergia = 100;
+        mago.poderMagico = "Magia";
+
+        //Exibindo valores dos atributos do objeto
+        System.out.println(mago.nome + " Energia: " + mago.nivelEnergia + " Poder: " + mago.poderMagico);
+    }
+}
+
+	PersonagemMagico elfo = new PersonagemMagico();
+	elfo.nome = "Legolas";
+	elfo.nivelEnergia = 50;
+	elfo.poderMagico = "Arqueira";
+	System.out.println(elfo.nome + " Energia: " + elfo.nivelEnergia + " Poder: " + elfo.poderMagico);
+
+Convenção de nomenclatura de Classes e Atributos.
+
+E assim concluímos nossa jornada pela construção de classes e objetos em Java! 
+Lembrem-se da diferença de classe e objeto! Se não lembrar, vale a pena rever a aula novamente, quantas vezes forem necessárias.
+Peguem tudo o que aprenderam neste vídeo e coloquem em prática. Escrevam suas próprias classes, criem objetos, experimentem diferentes atributos e construtores. 
+Não tenham medo de cometer erros, pois é assim que aprendemos e crescemos como programadores.
+Então, o que vocês estão esperando? Levantem-se, saiam da zona de conforto e comecem a programar! 
+
+VIDEO 2:
+
+Hoje, estamos prestes a elevar o nível das nossas classes, adicionando uma ferramenta poderosa ao nosso arsenal: os construtores!
+Você já se perguntou como podemos inicializar nossos objetos com valores específicos assim que eles são criados? 
+Como podemos garantir que nossas classes estejam prontas para uso imediato? Bem, meus amigos, é aí que os construtores entram em cena!
+Nesta aula, vamos explorar os fundamentos dos construtores. Vamos aprender a criar construtores personalizados, a inicializar nossos objetos com parâmetros específicos e a aproveitar ao máximo essa poderosa ferramenta de inicialização.
+
+E assim concluímos nossa exploração sobre os construtores. 
+Lembre-se, os construtores são métodos especiais que inicializam objetos e podem ser personalizados para atender às necessidades específicas da sua classe. 
+Ao criar um construtor, você pode definir valores iniciais para os atributos do objeto e garantir que ele seja usado corretamente desde o início.
+
+Com os construtores, você tem o poder de dar vida às suas classes, tornando seus objetos prontos para uso imediato. 
+Então, pratique a criação e o uso de construtores para aprimorar suas habilidades em Java e elevar o nível dos seus projetos.
+
+VIDEO 3:
+Já pensou em como criar um sistema que permita ao usuário inserir e exibir informações em um objeto de forma dinâmica? Bem, prepare-se, porque é exatamente isso que vamos aprender hoje!
+Nesta aula vamos desenvolver passo a passo um menu interativo. Criando opções de menu, capturar entrada do usuário, manipular objetos e exibir informações de forma clara e organizada.
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        PersonagemMagico personagem = new PersonagemMagico();
+        int op;
+        do {
+            System.out.println("Escolha uma opção: \n1-Cadastrar Personagem \n2-Exibir Personagem \n0-Sair");
+            op = sc.nextInt();
+
+            switch (op) {
+                case 1:
+                    System.out.println("Digite o nome do personagem:");
+                    String nome = sc.next() + sc.nextLine();
+                    System.out.println("Digite o poder do personagem:");
+                    String poder =  sc.next() + sc.nextLine();
+                    System.out.println("Digite o nível de energia");
+                    int energia = sc.nextInt();
+                    personagem.nome = nome;
+                    personagem.nivelEnergia = energia;
+                    personagem.poderMagico = poder;
+                    break;
+                case 2:
+                    System.out.println("Nome: " + personagem.nome + " Poder: " + personagem.poderMagico + " Nível energia: " + personagem.nivelEnergia);
+                    break;
+                case 0:
+                    System.out.println("Finalizando o programa");
+                default:
+                    System.out.println("Opção inválida");
+            }
+        }while(op != 0);
+
+        sc.close();
+
+    }
+}
+
+Ao longo deste vídeo, aprendemos como criar um menu interativo que permite ao usuário inserir e exibir informações em um objeto. 
+Nós capturaramos a entrada de dados do usuário, manipulamos objetos e apresentamos informações de maneira clara e organizada.
+Agora, o desafio está em suas mãos. Que tal praticar e aprimorar ainda mais o menu interativo que desenvolvemos juntos? 
+Experimentem adicionar novas funcionalidades, tornar a interface mais amigável ou até mesmo expandir para outras áreas de aplicação.
+
+VIDEO 4:
+
+Olá, queridos alunos! Bem-vindos a mais uma empolgante aula sobre programação em Java. 
+Hoje, estamos prestes a explorar um conceito fundamental: conexões diretas entre objetos. Estamos prontos para mergulhar nesse mundo fascinante?
+Até agora, aprendemos a criar classes e objetos independentes. Mas e se quisermos relacionar esses objetos de forma mais direta? 
+Como podemos conectar um objeto a outro, tornando-os interdependentes e ampliando suas funcionalidades?
+Nesta aula, vamos dar um passo além. Vamos aprender a criar outra classe que será usada como um atributo de referência em nossa classe principal. 
+Além disso, vamos ajustar nosso menu para aceitar e interagir com esse novo atributo, abrindo as portas para uma integração ainda mais poderosa entre nossos objetos
+
+public class HabilidadeEspecial {
+    String nome;
+    int custoEnergia;
+    boolean habilitada;
+
+    public HabilidadeEspecial(String nome, int custoEnergia, boolean habilitada) {
+        this.nome = nome;
+        this.custoEnergia = custoEnergia;
+        this.habilitada = habilitada;
+    }
+    
+}
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        PersonagemMagico personagem = new PersonagemMagico();
+        int op;
+        do {
+            System.out.println("Escolha uma opção: \n1-Cadastrar Personagem \n2-Exibir Personagem \n0-Sair");
+            op = sc.nextInt();
+
+            switch (op) {
+                case 1:
+                    System.out.println("Digite o nome do personagem:");
+                    String nome = sc.next() + sc.nextLine();
+                    System.out.println("Digite o poder do personagem:");
+                    String poder =  sc.next() + sc.nextLine();
+                    System.out.println("Digite o nível de energia:");
+                    int energia = sc.nextInt();
+                    personagem.nome = nome;
+                    personagem.nivelEnergia = energia;
+                    personagem.poderMagico = poder;
+                    System.out.println("Digite o nome da habilidade especial:");
+                    String nomeHabilidade = sc.next() + sc.nextLine();
+                    System.out.println("Digite o custo de energia para usar a habilidade especial:");
+                    int nivelEnergia = sc.nextInt();
+                    System.out.println("A habilidade está ativada? (true/false):");
+                    boolean ativada = sc.nextBoolean();
+                    //Criando o objeto que representa a habilidade especial com os valores informados pelo usuário
+                    HabilidadeEspecial habilidadeEspecial = new HabilidadeEspecial(nomeHabilidade, nivelEnergia, ativada);
+                    //Atribuindo o objeto habilidade especial ao personagem
+                    personagem.habilidade = habilidadeEspecial;
+                    break;
+                case 2:
+                    System.out.println("Nome: " + personagem.nome + " Poder: " + personagem.poderMagico + " Nível energia: " + personagem.nivelEnergia);
+                    System.out.println("Habilidade: " + personagem.habilidade.nome + " Custo energia: " + personagem.habilidade.custoEnergia + " Habilitada: " + personagem.habilidade.habilitada);
+                    break;
+                case 0:
+                    System.out.println("Finalizando o programa");
+                default:
+                    System.out.println("Opção inválida");
+            }
+        }while(op != 0);
+
+        sc.close();
+
+    }
+}
+
+Ao longo desta aula, aprendemos a criar uma nova classe para ser usada como atributo de referência em nossa classe principal. 
+Exploramos como ajustar nosso menu para aceitar e interagir com esse novo atributo, criando conexões diretas entre nossos objetos e ampliando suas funcionalidades.
+O desafio agora está em suas mãos. Que tal praticar e experimentar diferentes formas de integrar e conectar objetos em seus próprios projetos? 
+Não tenham medo de explorar novas ideias e expandir seus horizontes na programação Java.

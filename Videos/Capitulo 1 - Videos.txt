@@ -1,0 +1,338 @@
+VIDEO 1
+	Lógica de programação - base fundamental para a construção de sistemas
+	Algoritmo - sequencia lógica de passos para atingir um objetivo ou resolver um problema
+	Representar um algoritmo
+	Linguagem natural
+	Peça ao aluno para fornecer as notas das provas ou avaliações.
+		Some todas as notas fornecidas.
+		Conte quantas notas foram fornecidas.
+		Divida a soma das notas pelo número de notas para calcular a média.
+		Exiba a média calculada.
+		Verifique se a média é maior ou igual a 7 
+		Se a média for maior ou igual a 7, informe que o aluno foi aprovado.
+		Caso contrário, informe que o aluno foi reprovado.	
+	Fluxograma
+	https://lucid.app/
+	Pseudocódigo - ponte entre a linguagem natural e as linguagens de programação
+	início
+    // Declaração de variáveis
+    inteiro nota1, nota2, totalNotas
+    real media
+
+    // Solicitação de notas
+    escreva("Digite a nota da primeira prova: ")
+    leia(nota1)
+    escreva("Digite a nota da segunda prova: ")
+    leia(nota2)
+
+    // Processamento
+    totalNotas ← nota1 + nota2
+    media ← totalNotas / 2
+
+    // Exibição dos resultados
+    escreva("A média do aluno é: ", media)
+
+    // Verificação de aprovação
+    se media >= 7 então
+        escreva("Aluno aprovado!")
+    senão
+        escreva("Aluno reprovado.")
+    fimse
+	fim
+	
+	Estrutura básica do algoritmo
+
+VIDEO 2
+	Estrutura básica do algoritmo
+	Variaveis (caixa de armazenamento)
+	Tipos de dados (Inteiro, Real, Caracter, Booleano, Cadeia)
+	Entrada e saida de dados (escreva, leia)
+	Operadores aritméticos (+, -, *, /, %, ++, --, **)
+	
+	ALT + 27
+	
+VIDEO 3 
+	Você foi designado para desenvolver um programa que ajude as pessoas a monitorarem seu Índice de Massa Corporal (IMC), uma medida que relaciona o peso à altura e fornece uma indicação do estado nutricional. O programa deve solicitar ao usuário que insira seu peso em quilogramas e sua altura em metros. Utilizando essas informações, o algoritmo calculará o IMC e o apresentará ao usuário. O IMC é calculado pela fórmula IMC = peso / (altura * altura). O resultado do cálculo deve ser exibido de forma clara e informativa para que o usuário compreenda seu estado nutricional com base no IMC. 
+	algoritmo "CalculadoraIMC"
+var
+    peso, altura, imc: real
+
+inicio
+    // Solicitação do peso e altura ao usuário
+    escreva("Digite seu peso (em kg): ")
+    leia(peso)
+
+    escreva("Digite sua altura (em metros): ")
+    leia(altura)
+
+    // Cálculo do IMC
+    imc <- peso / (altura * altura)
+
+    // Exibição do resultado
+    escreva("Seu Índice de Massa Corporal é: ", imc)
+fim_algoritmo
+
+
+	O próximo desafio é desenvolver um programa para auxiliar usuários na conversão de valores monetários entre dólares e a moeda local. O programa deverá pedir ao usuário que informe o valor em dólar que deseja converter e a taxa de câmbio atual. Utilizando essas informações, o algoritmo calculará o valor convertido para a moeda local e o apresentará ao usuário. 
+	
+algoritmo
+    // Declaração de variáveis
+    valorDolar, taxaCambio, valorConvertido: real
+
+    // Solicitação do valor em dólar e taxa de câmbio ao usuário
+    escreva("Digite o valor em dólar: ")
+    leia(valorDolar)
+
+    escreva("Digite a taxa de câmbio: ")
+    leia(taxaCambio)
+
+    // Conversão para a moeda local
+    valorConvertido ← valorDolar * taxaCambio
+
+    // Exibição do resultado
+    escreva("O valor convertido é: ", valorConvertido)
+fim_algoritmo
+
+VIDEO 4
+
+Você recebeu a tarefa de criar um programa que permita calcular juros simples e o montante total após um período determinado. O programa deverá solicitar ao usuário que insira o capital inicial, a taxa de juros (em porcentagem) e o tempo de investimento em anos. Utilizando essas informações, o algoritmo calculará os juros simples e o montante total. Os juros simples são calculados pela fórmula J = P * (r/100) * t, onde J é o valor dos juros, P é o capital inicial, r é a taxa de juros e t é o tempo em anos. O montante total é obtido somando os juros simples ao capital inicial. 
+algoritmo
+    // Declaração de variáveis
+    real capital, taxaJuros, tempo, jurosSimples, montante
+
+    // Solicitação do capital, taxa de juros e tempo ao usuário
+    escreva("Digite o capital inicial: ")
+    leia(capital)
+
+    escreva("Digite a taxa de juros (em %): ")
+    leia(taxaJuros)
+
+    escreva("Digite o tempo (em anos): ")
+    leia(tempo)
+
+    // Cálculo de juros simples e montante
+    jurosSimples ← capital * (taxaJuros / 100) * tempo
+    montante ← capital + jurosSimples
+
+    // Exibição do resultado
+    escreva("O montante total é: ", montante)
+fim_algoritmo
+
+Desenvolva uma Calculadora de Desconto Percentual. O objetivo deste programa é calcular o preço com desconto de um produto com base no valor original e no percentual de desconto fornecidos pelo usuário. O programa solicitará ao usuário que insira o preço original do produto e o percentual de desconto desejado. Utilizando esses valores, o algoritmo realizará o cálculo do desconto e exibirá o preço final com a dedução percentual.
+algoritmo "CalculadoraDescontoPercentual"
+var
+    precoOriginal, percentualDesconto, desconto, precoComDesconto: real
+
+inicio
+    // Solicitação do preço original e percentual de desconto ao usuário
+    escreva("Digite o preço original: ")
+    leia(precoOriginal)
+
+    escreva("Digite o percentual de desconto: ")
+    leia(percentualDesconto)
+
+    // Cálculo do desconto
+    desconto <- precoOriginal * (percentualDesconto / 100)
+
+    // Cálculo do preço com desconto
+    precoComDesconto <- precoOriginal - desconto
+
+    // Exibição do resultado
+    escreva("O preço com desconto é: ", precoComDesconto)
+fim_algoritmo
+
+VIDEO 5
+
+	Python (https://www.onlinegdb.com/, google colab)
+	Algoritmo 1
+	Você foi designado para desenvolver um programa que ajude as pessoas a monitorarem seu Índice de Massa Corporal (IMC), uma medida que relaciona o peso à altura e fornece uma indicação do estado nutricional. O programa deve solicitar ao usuário que insira seu peso em quilogramas e sua altura em metros. Utilizando essas informações, o algoritmo calculará o IMC e o apresentará ao usuário. O IMC é calculado pela fórmula IMC = peso / (altura * altura). O resultado do cálculo deve ser exibido de forma clara e informativa para que o usuário compreenda seu estado nutricional com base no IMC. 
+	# Leitura
+	peso = float(input("Digite seu peso em kg: "))
+	altura = float(input("Digite sua altura em metros: "))
+
+	# Cálculo
+	imc = peso / altura ** 2
+
+	# Escrita
+	print(f"Seu IMC é: {imc:.2f}")
+
+	Algoritmo 2
+	O próximo desafio é desenvolver um programa para auxiliar usuários na conversão de valores monetários entre dólares e a moeda local. O programa deverá pedir ao usuário que informe o valor em dólar que deseja converter e a taxa de câmbio atual. Utilizando essas informações, o algoritmo calculará o valor convertido para a moeda local e o apresentará ao usuário. 
+	
+	# Solicitação do valor em dólar e taxa de câmbio ao usuário
+	valor_dolar = float(input("Digite o valor em dólar: "))
+	taxa_cambio = float(input("Digite a taxa de câmbio: "))
+
+	# Conversão para a moeda local
+	valor_convertido = valor_dolar * taxa_cambio
+
+	# Exibição do resultado
+	print("O valor convertido é:", valor_convertido)
+	
+	Algoritmo 3
+	Você recebeu a tarefa de criar um programa que permita calcular juros simples e o montante total após um período determinado. O programa deverá solicitar ao usuário que insira o capital inicial, a taxa de juros (em porcentagem) e o tempo de investimento em anos. Utilizando essas informações, o algoritmo calculará os juros simples e o montante total. Os juros simples são calculados pela fórmula J = P * (r/100) * t, onde J é o valor dos juros, P é o capital inicial, r é a taxa de juros e t é o tempo em anos. O montante total é obtido somando os juros simples ao capital inicial. 
+	# Declaração de variáveis
+	capital, taxa_juros, tempo, juros_simples, montante = 0.0, 0.0, 0.0, 0.0, 0.0
+
+	# Solicitação do capital, taxa de juros e tempo ao usuário
+	capital = float(input("Digite o capital inicial: "))
+	taxa_juros = float(input("Digite a taxa de juros (em %): "))
+	tempo = float(input("Digite o tempo (em anos): "))
+
+	# Cálculo de juros simples e montante
+	juros_simples = capital * (taxa_juros / 100) * tempo
+	montante = capital + juros_simples
+
+	# Exibição do resultado
+	print("O montante total é:", montante)
+	
+	Algoritmo 4
+	Desenvolva uma Calculadora de Desconto Percentual. O objetivo deste programa é calcular o preço com desconto de um produto com base no valor original e no percentual de desconto fornecidos pelo usuário. O programa solicitará ao usuário que insira o preço original do produto e o percentual de desconto desejado. Utilizando esses valores, o algoritmo realizará o cálculo do desconto e exibirá o preço final com a dedução percentual.
+	# Solicitação do preço original e percentual de desconto ao usuário
+	preco_original = float(input("Digite o preço original: "))
+	percentual_desconto = float(input("Digite o percentual de desconto: "))
+
+	# Cálculo do desconto
+	desconto = preco_original * (percentual_desconto / 100)
+
+	# Cálculo do preço com desconto
+	preco_com_desconto = preco_original - desconto
+
+	# Exibição do resultado
+	print("O preço com desconto é:", preco_com_desconto)
+
+	
+VIDEO 6
+	Java 
+	https://www.onlinegdb.com/#
+	
+	public class ExemploEntradaDados {
+		public static void main(String[] args) {
+			// Criando um objeto Scanner
+			Scanner scanner = new Scanner(System.in);
+
+			// Solicitação e leitura de um número inteiro
+			System.out.print("Digite um número inteiro: ");
+			int numero = scanner.nextInt();
+
+			// Exibição do número lido
+			System.out.println("Você digitou: " + numero);
+
+			// Fechando o Scanner após a utilização
+			scanner.close();
+		}
+	}
+
+
+	
+VIDEO 7
+	
+	Algoritmo 1
+	Você foi designado para desenvolver um programa que ajude as pessoas a monitorarem seu Índice de Massa Corporal (IMC), uma medida que relaciona o peso à altura e fornece uma indicação do estado nutricional. O programa deve solicitar ao usuário que insira seu peso em quilogramas e sua altura em metros. Utilizando essas informações, o algoritmo calculará o IMC e o apresentará ao usuário. O IMC é calculado pela fórmula IMC = peso / (altura * altura). O resultado do cálculo deve ser exibido de forma clara e informativa para que o usuário compreenda seu estado nutricional com base no IMC. 
+
+import java.util.Scanner;
+
+public class CalculadoraIMC {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double peso, altura, imc;
+
+        // Solicitação do peso ao usuário
+        System.out.print("Digite seu peso (em kg): ");
+        peso = scanner.nextDouble();
+
+        // Solicitação da altura ao usuário
+        System.out.print("Digite sua altura (em metros): ");
+        altura = scanner.nextDouble();
+
+        // Cálculo do IMC
+        imc = peso / (altura * altura);
+
+        // Exibição do resultado
+        System.out.println("Seu Índice de Massa Corporal é: " + imc);
+        
+        scanner.close();
+    }
+}
+
+
+	Algoritmo 2
+	O próximo desafio é desenvolver um programa para auxiliar usuários na conversão de valores monetários entre dólares e a moeda local. O programa deverá pedir ao usuário que informe o valor em dólar que deseja converter e a taxa de câmbio atual. Utilizando essas informações, o algoritmo calculará o valor convertido para a moeda local e o apresentará ao usuário. 
+
+import java.util.Scanner;
+
+public class ConversorMoeda {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double valorDolar, taxaCambio, valorConvertido;
+
+        System.out.print("Digite o valor em dólar: ");
+        valorDolar = scanner.nextDouble();
+
+        System.out.print("Digite a taxa de câmbio: ");
+        taxaCambio = scanner.nextDouble();
+
+        valorConvertido = valorDolar * taxaCambio;
+
+        System.out.println("O valor convertido é: " + valorConvertido);
+
+        scanner.close();
+    }
+}
+
+
+	Algoritmo 3
+	Você recebeu a tarefa de criar um programa que permita calcular juros simples e o montante total após um período determinado. O programa deverá solicitar ao usuário que insira o capital inicial, a taxa de juros (em porcentagem) e o tempo de investimento em anos. Utilizando essas informações, o algoritmo calculará os juros simples e o montante total. Os juros simples são calculados pela fórmula J = P * (r/100) * t, onde J é o valor dos juros, P é o capital inicial, r é a taxa de juros e t é o tempo em anos. O montante total é obtido somando os juros simples ao capital inicial. 
+
+import java.util.Scanner;
+
+public class CalculadoraJurosSimples {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double capital, taxaJuros, tempo, jurosSimples, montante;
+
+        System.out.print("Digite o capital inicial: ");
+        capital = scanner.nextDouble();
+
+        System.out.print("Digite a taxa de juros (em %): ");
+        taxaJuros = scanner.nextDouble();
+
+        System.out.print("Digite o tempo (em anos): ");
+        tempo = scanner.nextDouble();
+
+        jurosSimples = capital * (taxaJuros / 100) * tempo;
+        montante = capital + jurosSimples;
+
+        System.out.println("O montante total é: " + montante);
+
+        scanner.close();
+    }
+}
+
+	Algoritmo 4
+	Desenvolva uma Calculadora de Desconto Percentual. O objetivo deste programa é calcular o preço com desconto de um produto com base no valor original e no percentual de desconto fornecidos pelo usuário. O programa solicitará ao usuário que insira o preço original do produto e o percentual de desconto desejado. Utilizando esses valores, o algoritmo realizará o cálculo do desconto e exibirá o preço final com a dedução percentual.
+
+import java.util.Scanner;
+
+public class CalculadoraDescontoPercentual {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double precoOriginal, percentualDesconto, desconto, precoComDesconto;
+
+        System.out.print("Digite o preço original: ");
+        precoOriginal = scanner.nextDouble();
+
+        System.out.print("Digite o percentual de desconto: ");
+        percentualDesconto = scanner.nextDouble();
+
+        desconto = precoOriginal * (percentualDesconto / 100);
+        precoComDesconto = precoOriginal - desconto;
+
+        System.out.println("O preço com desconto é: " + precoComDesconto);
+
+        scanner.close();
+    }
+}

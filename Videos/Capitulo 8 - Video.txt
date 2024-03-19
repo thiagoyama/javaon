@@ -1,0 +1,46 @@
+Video 1
+Neste video vamos desvendar um dos pilares da programação orientada a objetos: Herança. 
+Este é o primeiro passo em nossa jornada para escrever código mais limpo, mais reutilizável e infinitamente mais eficaz. 
+
+
+Com herança, vocês estão agora mais aptos a criar programas em Java que reaproveitam o código criado de maneira eficiente.
+Continuem praticando e sigam codificando com curiosidade.
+
+Video 2
+Hoje vamos mergulhar no conceito sofisticado e incrivelmente útil das classes abstratas.
+Se vocês já se perguntaram como construir um framework de classes que serve de esqueleto para outras, ou como definir um contrato que as subclasses devem seguir, então vocês estão no lugar certo.
+
+//Criando método abstrato que deverá ser
+//implementado pela subclasse
+public abstract String getResumo();
+
+@Override
+public String getResumo() {
+	return "Nome: " + this.getNome() + "\nIngredientes: " + this.getIngredientes() + "\nPreco: R$" + this.getPreco() + "\nQuantidade: " + this.getQuantidade() + "ml";
+}
+
+@Override
+public String getResumo() {
+	return "Nome: " + this.getNome() + "\nIngredientes: " + this.getIngredientes() + "\nPreco: R$" + this.getPreco() + "\nServe: " + this.getServe() + " pessoas";
+}
+
+E assim concluímos nossa jornada pelas classes abstratas, um conceito chave para qualquer arquiteto de software que busca flexibilidade e coesão no design.
+Espero que agora vejam as possibilidades expansivas que isso abre para o seu código! 
+
+Video 3
+Está na hora de colocar seus conhecimentos à prova e trazer à vida tudo o conhecemos sobre herança e classes abstratas!
+
+“Com isso, fechamos nossa sessão prática, aplicando herança e classes abstratas de forma integrada. Espero que este exercício tenha iluminado o caminho para entender não apenas como esses conceitos funcionam, mas como podem ser poderosamente combinados em suas aplicações Java. 
+
+Video 4
+
+Hoje mergulhamos no conceito fascinante do polimorfismo em POO, uma peça chave da programação orientada a objetos que eleva a flexibilidade e reutilização do código a outro nível.
+Esse conceito, embora possa parecer complexo à primeira vista, é uma das joias da coroa da POO, permitindo que objetos de diferentes classes sejam tratados como objetos de uma mesma superclasse.
+
+public double getPercentualDeComissao() { return 12; }
+
+System.out.println(teste.getPercentualDeComissao()); //Erro
+System.out.println(((Vendedor) teste).getPercentualDeComissao()); //Cast
+var teste = new Vendedor();
+
+E com isso, encerramos nosso mergulho no conceito vital de polimorfismo em POO. Espero que tenham captado a essência dessa poderosa ferramenta de programação orientada a objetos e estejam prontos para aplicá-la em seus projetos. 

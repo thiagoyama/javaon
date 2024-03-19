@@ -1,0 +1,195 @@
+VIDEO 1
+Hoje, embarcaremos em uma jornada para desvendar os segredos dos métodos em Java, que são blocos de código reutilizáveis que executam uma tarefa específica. 
+Eles são a essência da programação orientada a objetos, permitindo-nos organizar e modularizar nosso código de forma eficiente. 
+Mas o que exatamente constitui um método? E como podemos usá-los para melhorar nossos programas?
+Vamos explorar a estrutura básica dos métodos, discutir sua assinatura, parâmetros e tipos de retorno. Além disso, vamos esclarecer a diferença entre método e função, um conceito que muitas vezes pode gerar confusão para os iniciantes.
+
+
+public int calcularSoma(int numero1, int numero2) {
+	int soma = numero1 + numero2;
+	return soma;
+}
+
+public void dizerOla() {
+    System.out.println(“Olá Mundo!”);
+}
+
+
+Método x Função.
+Uma função pode ser invocada de qualquer lugar do programa, mesmo sem estar associado a uma classe ou objeto específico. Já os métodos estão associados a uma classe ou objeto específico, atuando sobre os dados desse objeto ou oferecendo funcionalidades relacionadas a ele.
+Para facilitar um pouco a compreensão da diferença entre uma simples função em um paradigma de programação estruturada e um método em um paradigma de programação orientado a objetos, imaginemos uma ação que envolve calcular juros.
+Uma função que calcula juros não está vinculada a nenhuma estrutura de programação. A função existe e não há, em termos de semântica, nenhuma vinculação a nenhum outro componente do sistema.
+
+Discutimos a estrutura básica dos métodos, exploramos sua assinatura, aprendemos como usar parâmetros para tornar nossos métodos mais flexíveis e como definir tipos de retorno para obter resultados específicos.
+Agora que vocês têm uma compreensão sólida dos métodos, o próximo passo é praticar e aplicar esse conhecimento em seus próprios projetos. Experimentem criar métodos para realizar tarefas específicas e observem como isso pode tornar seu código mais eficiente e organizado.
+
+VIDEO 2:
+Chegou a hora de colocar a mão na massa e aplicar tudo o que sabemos sobre métodos em Java. Vamos mergulhar de cabeça na implementação de métodos em um projeto de exemplo.
+Sabemos os fundamentos dos métodos, sua estrutura, parâmetros e tipos de retorno. Agora é o momento de aplicar esse conhecimento em um contexto prático. 
+Vamos trabalhar em um projeto de exemplo e implementar métodos para tornar nosso código mais modular e eficiente
+
+public void atacar(String ataque) {
+        if (nivelEnergia >= 10) {
+            System.out.println(nome + " realizou um ataque: " + ataque + "!");
+            nivelEnergia -= 10;
+        } else {
+            System.out.println(nome + " está sem energia para atacar.");
+        }
+    }
+
+case 3:
+		System.out.println("Digite o nome do ataque:");
+		String ataque = sc.next() + sc.nextLine();
+		personagem.atacar(ataque);
+		break;
+
+System.out.println("Escolha uma opção: \n1-Cadastrar Personagem \n2-Exibir Personagem \n3-Realizar ataque \n0-Sair");	
+
+public int aumentarEnergia(int energia){
+        nivelEnergia = nivelEnergia + energia;
+        return nivelEnergia;
+ }
+
+case 4:
+		System.out.println("Digite a quantidade de energia:");
+		int qtd = sc.nextInt();
+		int nivelAtual = personagem.aumentarEnergia(qtd);
+		System.out.println("Nível atual de energia: " + nivelAtual);
+		break;
+
+System.out.println("Escolha uma opção: \n1-Cadastrar Personagem \n2-Exibir Personagem \n3-Realizar ataque \n4-Aumentar energia \n0-Sair");
+
+Analisamos um projeto simples e identificamos oportunidades para a criação de métodos. Desenvolvemos métodos para encapsular tarefas específicas, tornando nosso código mais modular, organizado e fácil de manter.
+Agora que vocês têm uma compreensão prática de como implementar métodos em um projeto real, o próximo passo é praticar e aplicar esse conhecimento em seus próprios projetos. 
+Experimentem criar métodos para tornar seu código mais eficiente e reutilizável.
+
+VIDEO 3:
+
+Nesta aula, vamos explorar como criar e implementar um novo método dentro de uma classe associada à nossa classe principal. Vamos dar vida aos nossos personagens, adicionando novas ações e comportamentos que enriquecerão nossa experiência de programação.
+
+public void ativarHabilidadeEspecial(){
+	if (!habilidade.habilitada){
+		System.out.println("Habilidade especial não está ativada");
+	} else if (nivelEnergia >= habilidade.custoEnergia){
+		System.out.println("Ativando a habilidade: " + habilidade.nome);
+		nivelEnergia -= habilidade.custoEnergia;
+	} else {
+		System.out.println(nome + "está sem energia para a habilidade especial");
+	}
+}
+
+E assim chegamos ao final desta aula, onde exploramos como adicionar mais ações aos nossos personagens através da implementação de um novo método dentro de uma classe associada à classe principal. 
+Espero que vocês tenham aproveitado e aprendido tanto quanto eu durante esta jornada. 
+Lembrem-se sempre da importância da prática constante e do aprimoramento contínuo. Continuem estudando, colaborando e compartilhando conhecimento com seus colegas. Juntos, podemos alcançar grandes feitos na programação.
+
+VIDEO 4:
+
+Agora é hora de enfrentar mais um desafio empolgante em nossa jornada de aprendizado em Java. Estão prontos para colocar suas habilidades à prova e resolver um problema desafiador?
+Como parte de nosso processo de aprendizado, é crucial praticarmos o que aprendemos. E nada melhor do que um bom desafio para solidificar nosso conhecimento. 
+Vamos analisar o problema, identificar os requisitos e desenvolver uma solução eficiente em Java.
+
+Crie uma classe chamada Produto que represente um produto em uma loja. O Produto deve ter os seguintes atributos:
+•	String nome (o nome do produto)
+•	double preco (o preço do produto)
+•	int quantidade (a quantidade em estoque do produto)
+
+A classe deve incluir os seguintes métodos:
+•	Um método exibirInformacoes() que exiba na tela todas as informações do produto, incluindo nome, preço e quantidade em estoque.
+•	Um método comprar(int quantidadeComprada) que recebe a quantidade a ser comprada como argumento e atualiza a quantidade em estoque. Certifique-se de que a quantidade em estoque não seja negativa após a compra.
+•	Um método adicionarEstoque(int quantidadeAdicional) que recebe a quantidade a ser adicionada ao estoque como argumento e atualiza a quantidade em estoque.
+•	Um método aplicarDesconto(double percentual) que recebe a porcentagem de desconto a ser aplicada ao preço do produto.
+
+public class Produto {
+    String nome;
+    double preco;
+    int quantidade;
+
+    public Produto(String nome, double preco, int quantidade) {
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidade = quantidade;
+    }
+    public Produto(){}
+    public void exibirInformacoes() {
+        System.out.println("Nome do produto: " + nome);
+        System.out.println("Preço: R$" + preco);
+        System.out.println("Quantidade em estoque: " + quantidade);
+    }
+
+    public void comprar(int quantidadeComprada) {
+        if (quantidadeComprada <= quantidade) {
+            quantidade -= quantidadeComprada;
+            System.out.println("Compra realizada com sucesso! Quantidade restante: " + quantidade);
+        } else {
+            System.out.println("Quantidade insuficiente em estoque!");
+        }
+    }
+
+    public void adicionarEstoque(int quantidadeAdicional) {
+        quantidade += quantidadeAdicional;
+        System.out.println("Quantidade adicionada ao estoque. Novo total: " + quantidade);
+    }
+
+    public void aplicarDesconto(double percentualDesconto) {
+        double desconto = preco * (percentualDesconto / 100);
+        preco -= desconto;
+        System.out.println("Desconto aplicado! Novo preço: R$" + preco);
+    }
+}
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        Produto produto = new Produto();
+        int op;
+
+        do {
+            System.out.println("Escolha uma opção: \n1-Cadastrar Produto \n2-Exibir Produto \n3-Comprar \n4-Adicionar Estoque \n5-Aplicar Desconto \n0-Sair");
+            op = sc.nextInt();
+
+            switch (op) {
+                case 1:
+                    System.out.println("Digite o nome do produto:");
+                    String nome = sc.next() + sc.nextLine();
+                    System.out.println("Digite o preço do produto:");
+                    double preco = sc.nextDouble();
+                    System.out.println("Digite a quantidade em estoque do produto:");
+                    int estoque = sc.nextInt();
+                    produto = new Produto(nome, preco, estoque);
+                    break;
+                case 2:
+                    produto.exibirInformacoes();
+                    break;
+                case 3:
+                    System.out.println("Digite a quantidade para compra:");
+                    int qtd = sc.nextInt();
+                    produto.comprar(qtd);
+                    break;
+                case 4:
+                    System.out.println("Digite a quantidade para adicionar no estoque:");
+                    qtd = sc.nextInt();
+                    produto.adicionarEstoque(qtd);
+                    break;
+                case 5:
+                    System.out.println("Digite a porcentagem de desconto:");
+                    double desconto = sc.nextDouble();
+                    produto.aplicarDesconto(desconto);
+                    break;
+                case 0:
+                    System.out.println("Finalizando o programa");
+                    break;
+                default:
+                    System.out.println("Opção inválida");
+            }
+        } while (op != 0);
+
+        sc.close();
+
+    }
+}
+
+Durante esta aula, analisamos cuidadosamente o problema proposto, identificamos os requisitos e desenvolvemos uma solução em Java. 
+Utilizamos os conceitos e técnicas que aprendemos ao longo do curso para criar uma implementação eficaz e robusta

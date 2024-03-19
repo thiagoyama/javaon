@@ -1,0 +1,371 @@
+VIDEO 5
+
+n : inteiro
+n <- 1
+enquanto (n <= 5) faça
+    Escreva(n)
+    n <- n + 1
+fimEnquanto
+
+contador: inteiro
+contador <- 1
+// Executa pelo menos uma vez
+repita
+   escreva("Contagem: ", contador)
+   contador <- contador + 1
+ate contador > 5 // Verifica se contador é maior que 5
+
+
+para (inteiro i = 1; i <= 10; i++) faça
+    escreva(i)
+fimpara
+
+
+VIDEO 6
+
+n = 1
+while n <= 5:
+    print(n)
+    n += 1
+
+for numero in range(1, 11):
+    print(numero)
+
+import random
+
+# Gera um número aleatório entre 1 e 20
+numero_secreto = random.randint(1, 20)
+
+print("Bem-vindo ao jogo de adivinhação!")
+print("Tente adivinhar o número entre 1 e 20.")
+
+tentativas = 0
+adivinhou = False
+
+while not adivinhou:
+    tentativa = int(input("Digite sua tentativa: "))
+    tentativas += 1
+
+    if tentativa == numero_secreto:
+        print(f"Parabéns! Você acertou o número em {tentativas} tentativas.")
+        adivinhou = True
+    elif tentativa < numero_secreto:
+        print("Tente um número maior.")
+    else:
+        print("Tente um número menor.")
+
+
+total_alunos = 10
+soma_notas = 0
+
+print("Informe as notas dos", total_alunos, "alunos:")
+
+for i in range(total_alunos):
+    nota = float(input(f"Nota do aluno {i + 1}:"))
+    soma_notas += nota
+
+media_sala = soma_notas / total_alunos
+print("A média das notas da sala é:", media_sala)
+
+print("Tabela de Multiplicação:")
+
+for i in range(1, 11):
+    print(f"\nTabuada do {i}:")
+    for j in range(1, 11):
+        resultado = i * j
+        print(f"{i} x {j} = {resultado}")
+
+
+
+VIDEO 7
+
+public class ExemploWhile {
+    public static void main(String[] args) {
+        int n = 1;
+        while (n <= 5) {
+            System.out.println(n);
+            n++;
+        }
+    }
+}
+
+public class ExemploDoWhile {
+    public static void main(String[] args) {
+        int contador = 1;
+
+        do {
+            System.out.println("Contagem: " + contador);
+            contador++;
+        } while (contador <= 5);
+    }
+}
+
+public class ImprimeNumeros {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i);
+        }
+    }
+}
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class JogoAdivinhacao {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        int numeroSecreto = random.nextInt(20) + 1; // Gera um número aleatório entre 1 e 20
+        System.out.println("Bem-vindo ao jogo de adivinhação!");
+        System.out.println("Tente adivinhar o número entre 1 e 20.");
+
+        int tentativas = 0;
+        boolean adivinhou = false;
+
+        while (!adivinhou) {
+            System.out.print("Digite sua tentativa: ");
+            int tentativa = scanner.nextInt();
+            tentativas++;
+
+            if (tentativa == numeroSecreto) {
+                System.out.println("Parabéns! Você acertou o número em " + tentativas + " tentativas.");
+                adivinhou = true;
+            } else if (tentativa < numeroSecreto) {
+                System.out.println("Tente um número maior.");
+            } else {
+                System.out.println("Tente um número menor.");
+            }
+        }
+        scanner.close();
+    }
+}
+
+import java.util.Scanner;
+
+public class MediaNotasSala {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int totalAlunos = 10;
+        double somaNotas = 0;
+
+        System.out.println("Informe as notas dos " + totalAlunos + " alunos:");
+
+        for (int i = 1; i <= totalAlunos; i++) {
+            System.out.print("Nota do aluno " + i + ": ");
+            double nota = scanner.nextDouble();
+            somaNotas += nota;
+        }
+
+        double mediaSala = somaNotas / totalAlunos;
+        System.out.println("\nA média das notas da sala é: " + mediaSala);
+
+        scanner.close();
+    }
+}
+
+
+public class TabelaMultiplicacao {
+    public static void main(String[] args) {
+        System.out.println("Tabela de Multiplicação:");
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("\nTabuada do " + i + ":");
+
+            for (int j = 1; j <= 10; j++) {
+                int resultado = i * j;
+                System.out.println(i + " x " + j + " = " + resultado);
+            }
+        }
+    }
+}
+
+
+VIDEO 8
+
+numero = int(input("Digite um número inteiro positivo maior que 1: "))
+
+if numero <= 1:
+    print("Número inválido. Digite um número inteiro positivo maior que 1.")
+else:
+    eh_primo = True
+    
+    for i in range(2, numero):
+        if numero % i == 0:
+            eh_primo = False
+            break
+    
+    if eh_primo:
+        print(f"O número {numero} é um número primo.")
+    else:
+        print(f"O número {numero} não é um número primo.")
+
+qtd_sorvetes = 0
+valor_total = 0.0
+finalizar_pedido = False
+
+print("Bem-vindo à Sorveteria!")
+
+while not finalizar_pedido:
+    print("\nOpções de Sorvetes:")
+    print("1. 1 Bola casquinha - R$6,00")
+    print("2. 2 Bolas casquinha - R$9,00")
+    print("3. 2 Bolas cascão recheado - R$12,00")
+    opcao = int(input("Escolha uma opção de sorvete (ou '0' para finalizar o pedido): "))
+    
+    match opcao:
+        case 0:
+            finalizar_pedido = True
+        case 1:
+            valor_sorvete = 6.00
+        case 2:
+            valor_sorvete = 9.00
+        case 3:
+            valor_sorvete = 12.00
+        case _:
+            print("Opção inválida. Escolha um número válido.")
+    print(opcao)
+    if 1 <= opcao <= 3:
+        qtd = int(input("Quantas unidades deste sorvete? "))
+        qtd_sorvetes += qtd
+        valor_total += valor_sorvete * qtd
+
+        for i in range(qtd):
+            escolha_cobertura = int(input("Deseja cobertura 1 – Sim, 2 – Não? "))
+            if escolha_cobertura == 1:
+                print("Opções de Cobertura:")
+                print("1. Chocolate - R$2,00")
+                print("2. Morango - R$2,00")
+                print("3. Avelã - R$3,00")
+                opcao_cobertura = int(input("Escolha uma opção de cobertura: "))
+
+                match opcao_cobertura:
+                    case 1:
+                        valor_total += 2.00
+                    case 2:
+                        valor_total += 2.00
+                    case 3:
+                        valor_total += 3.00
+                    case _:
+                        print("Opção inválida. Sem cobertura.")
+
+print("\nResumo do Pedido:")
+print("Quantidade de Sorvetes:", qtd_sorvetes)
+print("Valor Total: R$", valor_total)
+print("Obrigado pela preferência!")
+
+
+VIDEO 9
+
+import java.util.Scanner;
+
+public class VerificarNumeroPrimo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Digite um número inteiro positivo maior que 1: ");
+        int numero = scanner.nextInt();
+        
+        if(numero <= 1) {
+            System.out.println("Número inválido. Digite um número inteiro positivo maior que 1.");
+        } else {
+            boolean ehPrimo = true;
+            
+            for(int i = 2; i < numero; i++) {
+                if(numero % i == 0) {
+                    ehPrimo = false;
+                    break;
+                }
+            }
+            
+            if(ehPrimo) {
+                System.out.println("O número " + numero + " é um número primo.");
+            } else {
+                System.out.println("O número " + numero + " não é um número primo.");
+            }
+        }
+        
+        scanner.close();
+    }
+}
+
+import java.util.Scanner;
+
+public class Sorveteria {
+    	Scanner scanner = new Scanner(System.in);
+		int qtdSorvetes = 0;
+		double valorTotal = 0;
+		double valorSorvete = 0;
+		boolean finalizarPedido = false;
+
+		System.out.println("Bem-vindo à Sorveteria!");
+
+		while (!finalizarPedido) {
+			System.out.println("\nOpções de Sorvetes:");
+			System.out.println("1. 1 Bola casquinha - R$6,00");
+			System.out.println("2. 2 Bolas casquinha - R$9,00");
+			System.out.println("3. 2 Bolas cascão recheado - R$12,00");
+			System.out.print("Escolha uma opção de sorvete (ou '0' para finalizar o pedido): ");
+			int opcao = scanner.nextInt();			
+			
+			switch (opcao) {
+			case 0:
+				finalizarPedido = true;
+				break;
+			case 1:
+				valorSorvete = 6.00;
+				break;
+			case 2:
+				valorSorvete = 9.00;
+				break;
+			case 3:
+				valorSorvete = 12.00;
+				break;
+			default:
+				System.out.println("Opção inválida. Escolha um número válido.");
+				break;
+			}
+
+			if (opcao >= 1 && opcao <= 3) {
+				System.out.print("Quantas unidades deste sorvete? ");
+				int qtd = scanner.nextInt();		
+				qtdSorvetes += qtd;
+				valorTotal += valorSorvete * qtd;
+
+				for (int i = 0; i < qtd; i++) {
+					System.out.print("Deseja cobertura 1 – Sim, 2 – Não? ");
+					int escolhaCobertura = scanner.nextInt();
+
+					if (escolhaCobertura == 1) {
+						System.out.println("Opções de Cobertura:");
+						System.out.println("1. Chocolate - R$2,00");
+						System.out.println("2. Morango - R$2,00");
+						System.out.println("3. Avelã - R$3,00");
+						System.out.print("Escolha uma opção de cobertura: ");
+						int opcaoCobertura = scanner.nextInt();
+
+						switch (opcaoCobertura) {
+						case 1:
+						case 2:
+							valorTotal += 2.00;
+							break;
+						case 3:
+							valorTotal += 3.00;
+							break;
+						default:
+							System.out.println("Opção inválida. Sem cobertura.");
+							break;
+						}						
+					}
+				}
+			}
+		}
+		System.out.println("\nResumo do Pedido:");
+		System.out.println("Quantidade de Sorvetes: " + qtdSorvetes);
+		System.out.println("Valor Total: R$" + valorTotal);
+		System.out.println("Obrigado pela preferência!");
+		scanner.close();
+}
+
+
+

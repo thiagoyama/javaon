@@ -1,0 +1,293 @@
+VIDEO 1 
+Em um mundo onde o código se multiplica rapidamente, com milhares de classes sendo criadas, o caos pode acontecer.
+Nessa hora os pacotes surgem como o herói silencioso, trazendo a organização e clareza. 
+
+Mas o que exatamente são esses pacotes e como eles podem nos ajudar a trazer luz ao caos?
+
+Espero que agora se sintam mais confiantes para organizar e estruturar seus projetos de forma eficiente.
+Lembrem-se sempre: a organização é a chave para o sucesso na programação.
+
+VIDEO 2
+Preparados para desvendar os segredos do encapsulamento em Java? 
+Nesta aula, vamos explorar como ele torna nossos programas mais seguros e flexíveis. Vem comigo!
+
+•	Private: o atributo ou método só pode ser acessado pela própria classe a que pertence.
+•	Public: o atributo ou método pode ser acessado por qualquer outra classe.
+•	Default (sem o modificador): Quando não determinamos explicitamente o modificador, o atributo ou método pode ser acessado por qualquer classe que esteja no mesmo pacote que a classe a que pertence.
+•	Protected: o atributo ou método pode ser acessado por qualquer classe que pertença ao mesmo pacote da classe ou por qualquer classe que herde da classe, mesmo que estejam em pacotes diferentes.
+
+Lembrem-se sempre da importância de proteger e organizar nosso código para construir sistemas mais robustos e seguros.
+Continuem praticando, estudando e sempre aplique o encapsulamento nos seus projetos.
+
+
+VIDEO 3
+Prontos para dar um upgrade na segurança e organização do seu código Java? Vamos aprender a aplicar o encapsulamento em nosso projeto de exemplo. Dê o play e vamos lá!
+
+E assim concluímos mais uma etapa na evolução do nosso projeto em Java. Ao aplicarmos o encapsulamento, fortalecemos a segurança e a organização do nosso código, preparando-o para enfrentar desafios futuros.
+
+VIDEO 4
+Hoje vamos explorar um padrão de design poderoso: o Set Builder. Preparem-se para aprender como construir conjuntos de objetos de forma eficiente e flexível. Vamos lá!
+
+Você sabia que existe uma outra maneira de criar um método set? Se vocês repararam os métodos setters da classe Aluno não retornam nenhum valor (o retorno de cada método é void). 
+Nós podemos refatorar o código para que os métodos setters retornem o próprio objeto a cada chamada que se fizer para eles. 
+
+
+package br.com.fiap.game.model;
+
+public class PersonagemMagico {
+
+    //Atributos
+    private String nome;
+    private String poderMagico;
+    private int nivelEnergia;
+
+    private HabilidadeEspecial habilidade;
+
+    public PersonagemMagico setNome(String nome){
+        this.nome = nome;
+        return this;
+    }
+
+    public PersonagemMagico setPoderMagico(String poderMagico) {
+        this.poderMagico = poderMagico;
+        return this;
+    }
+
+    public PersonagemMagico setNivelEnergia(int nivelEnergia) {
+        this.nivelEnergia = nivelEnergia;
+        return this;
+    }
+
+    public PersonagemMagico setHabilidade(HabilidadeEspecial habilidade) {
+        this.habilidade = habilidade;
+        return this;
+    }
+    //... 
+}
+
+
+import br.com.fiap.game.model.PersonagemMagico;
+
+public class ExemploSetBuilder {
+
+    public static void main(String[] args) {
+        
+        PersonagemMagico primeiroPersonagem = new PersonagemMagico();
+        //Primeira forma, sem o padrão set builder
+        primeiroPersonagem.setNome("Gandalf");
+        primeiroPersonagem.setNivelEnergia(90);
+        primeiroPersonagem.setPoderMagico("Magia Branca");
+        
+        PersonagemMagico segundoPersonagem = new PersonagemMagico();
+        //Segunda forma, com o padrão set builder (chamadas encadeadas de métodos)
+        segundoPersonagem.setNome("Cavaleiro Branco")
+                .setNivelEnergia(50)
+                .setPoderMagico("Iniciativa");
+        
+    }
+}
+
+
+E assim concluímos nossa jornada pelo padrão Set Builder. Espero que vocês tenham adquirido uma compreensão sólida deste padrão de design 
+e estejam prontos para aplicá-lo em seus próprios projetos. Continuem explorando e praticando!
+
+VIDEO 5
+Nesta aula, vamos trabalhar juntos para aplicar o encapsulamento no nosso desafio. 
+Vamos analisar os pontos onde podemos encapsular nossos dados e métodos, melhorando assim a estrutura e a legibilidade do nosso código.
+
+Desenvolva uma classe para representar um aluno em uma faculdade, semelhante à classe "PersonagemMagico". Este aluno terá um registro de matrícula, nome e endereço. O endereço incluirá o logradouro, número, CEP e uma referência à cidade, a qual será representada por uma classe contendo nome e estado.
+
+package br.com.fiap.model;
+
+public class Aluno {
+
+    private int rm;
+    private String nome;
+    private Endereco endereco;
+
+    public Aluno(int rm, String nome, Endereco endereco) {
+        this.rm = rm;
+        this.nome = nome;
+        this.endereco = endereco;
+    }
+
+    public Aluno() {
+    }
+
+    public int getRm() {
+        return rm;
+    }
+
+    public void setRm(int rm) {
+        this.rm = rm;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+}
+
+package br.com.fiap.model;
+
+public class Endereco {
+
+    private String logradouro;
+
+    private String numero;
+
+    private String cep;
+
+    private Cidade cidade;
+
+    public Endereco(String logradouro, String numero, String cep, Cidade cidade) {
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.cep = cep;
+        this.cidade = cidade;
+    }
+
+    public Endereco() {
+    }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public Cidade getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
+    }
+}
+
+package br.com.fiap.model;
+
+public class Cidade {
+
+    private String nome;
+
+    private String estado;
+
+    public Cidade(String nome, String estado) {
+        this.nome = nome;
+        this.estado = estado;
+    }
+
+    public Cidade() {
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+}
+
+import br.com.fiap.model.Aluno;
+import br.com.fiap.model.Cidade;
+import br.com.fiap.model.Endereco;
+
+import java.util.Scanner;
+
+public class ViewAluno {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int op;
+        Aluno aluno = new Aluno();
+
+        do {
+            System.out.println("Escolha: \n1-Cadastrar Aluno \n2-Exibir Aluno \n0-Sair");
+            op = sc.nextInt();
+
+            switch (op){
+                case 1:
+                    System.out.println("Qual o nome do aluno?");
+                    String nome = sc.next() + sc.nextLine();
+                    System.out.println("Qual o RM?");
+                    int rm = sc.nextInt();
+                    System.out.println("Qual o logradouro do aluno?");
+                    String logradouro = sc.next() + sc.nextLine();
+                    System.out.println("Qual o número?");
+                    String numero = sc.next() + sc.nextLine();
+                    System.out.println("Qual o CEP?");
+                    String cep = sc.next() + sc.nextLine();
+                    System.out.println("Qual o nome da cidade?");
+                    String nomeCidade = sc.next() + sc.nextLine();
+                    System.out.println("Qual o estado?");
+                    String estado = sc.next() + sc.nextLine();
+                    Cidade cidade = new Cidade(nomeCidade, estado);
+                    Endereco endereco = new Endereco(logradouro, numero, cep, cidade);
+                    aluno.setNome(nome);
+                    aluno.setRm(rm);
+                    aluno.setEndereco(endereco);
+                    System.out.println("Aluno registrado!");
+                    break;
+                case 2:
+                    System.out.println(aluno.getNome() + ", rm: " + aluno.getRm());
+                    System.out.println(aluno.getEndereco().getLogradouro() + ", " + aluno.getEndereco().getNumero() + ", CEP: " + aluno.getEndereco().getCep());
+                    System.out.println(aluno.getEndereco().getCidade().getNome() + "/" + aluno.getEndereco().getCidade().getEstado());
+                case 0:
+                    System.out.println("Finalizando o sistema");
+                    break;
+                default:
+                    System.out.println("Opção inválida");
+            }
+
+        }while (op != 0);
+
+        sc.close();
+
+    }
+
+}
+
+
+
+Chegamos ao fim desta aula desafiadora, onde exploramos o poder do encapsulamento na resolução de problemas. Ao aplicarmos esta técnica no nosso desafio, fortalecemos não apenas a estrutura do código, mas também a nossa compreensão dos princípios fundamentais da programação orientada a objetos
+Por fim, quero parabenizá-los pelo esforço e dedicação demonstrados nesta aula. Continuem assim, sempre buscando evoluir e aprimorar suas habilidades
