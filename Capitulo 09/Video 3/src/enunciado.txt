@@ -1,0 +1,8 @@
+Desenvolva um Sistema de Gerenciamento de Estoque, um programa em Java para gerenciar o estoque de produtos de uma loja. O sistema deve utilizar uma exceção customizada para tratar casos em que a quantidade solicitada de um produto não está disponível em estoque.
+Você irá criar um programa que permite ao usuário adicionar produtos ao estoque e depois solicitar a remoção de uma certa quantidade de um produto específico. Se a quantidade solicitada para remoção exceder a quantidade disponível em estoque, o sistema deve lançar e tratar uma exceção customizada.
+Requisitos:
+1.	Estrutura de Dados: Utilize uma classe Produto para representar os produtos no estoque. Cada produto deve ter um id, nome e estoque.
+2.	Adicionar e Remover Produtos: Implemente métodos para adicionar produtos ao estoque e remover uma certa quantidade de um produto específico.
+3.	Exceção Customizada: EstoqueInsuficienteException, lançada quando uma tentativa é feita para remover uma quantidade maior do que a disponível em estoque para um produto.
+4.	Interface do Usuário: Permita que o usuário interaja com o sistema através do console (texto), podendo adicionar produtos ao estoque, solicitar a remoção de produtos ou finalizar o programa. Exiba sempre a quantidade atual no estoque.
+5.	Tratamento e Lançamento de Exceções: No método de remoção, verifique se a quantidade solicitada para remoção não excede a quantidade disponível. Se exceder, lance a EstoqueInsuficienteException. Trate a exceção de forma apropriada, informando ao usuário a situação e permitindo outra tentativa.

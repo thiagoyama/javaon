@@ -1,0 +1,9 @@
+•	NullPointerException: Ocorre quando há uma tentativa de usar uma referência que aponta para null em um caso que requer um objeto real, como chamar um método de um objeto nulo.
+
+•	ArrayIndexOutOfBoundsException: Lançada para indicar que um índice de array, seja positivo ou negativo, está fora dos limites permitidos.
+•	InputMismatchException: Lançada pela classe Scanner quando o próximo token não corresponde ao tipo esperado ou está fora do intervalo para o tipo esperado. Essa exceção é comum quando se tenta ler um tipo específico de dado (como um inteiro ou um float) a partir da entrada do usuário, mas o usuário fornece um dado que não pode ser convertido para esse tipo, resultando em um descompasso de tipos de entrada.
+•	ClassNotFoundException: Essa exceção é lançada quando uma aplicação tenta carregar em uma classe através de seu nome usando algum método do ClassLoader, mas não encontra a definição da classe.
+•	ArithmeticException: Lançada quando ocorre uma condição excepcional em operações aritméticas, como divisão por zero.
+•	FileNotFoundException: Uma exceção específica que é lançada quando um programa tenta abrir um arquivo ou um diretório que não existe.
+•	IOException: Abrange uma ampla gama de falhas de I/O (entrada/saída), incluindo falhas de leitura e escrita em arquivos.
+•	NumberFormatException: Ocorre quando uma tentativa é feita para converter uma string para um dos tipos numéricos, mas a string não tem o formato apropriado.
