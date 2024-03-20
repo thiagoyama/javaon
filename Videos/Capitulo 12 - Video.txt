@@ -1,0 +1,120 @@
+VIDEO 1
+Bem-vindos à ponte que conecta seu código Java ao mundo dos dados: a integração com bancos de dados. 
+Hoje, vamos nos aprofundar no JDBC, a espinha dorsal que permite que aplicações Java se comuniquem de maneira eficaz com uma variedade de bancos de dados. 
+Vamos iniciar nosso projeto configurando o ambiente passo a passo e, em seguida, estabelecer uma conexão sólida com o banco de dados. 
+Esta aula é fundamental para qualquer desenvolvedor que queira fazer seu código interagir com dados persistentes. 
+Prepare-se para desbloquear um novo reino de possibilidades em Java!
+
+<dependency>
+      <groupId>com.oracle.database.jdbc</groupId>
+      <artifactId>ojdbc8</artifactId>
+      <version>23.2.0.0</version>
+</dependency>
+
+public static void main( String[] args )
+{
+	try {
+		Connection conexao = DriverManager.getConnection("jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl", "usuario","senha");
+		System.out.println("Conexão realizada!");
+	} catch (SQLException e) {
+		System.err.println(e.getMessage());
+	}
+}
+
+Vocês deram o primeiro e importante passo para integrar dados persistentes em suas aplicações Java. 
+Com a configuração do projeto concluída e a conexão com o banco estabelecida, um mundo de dados está agora ao alcance de suas linhas de código
+ 
+VIDEO 2
+Olá e bem-vindos a uma aula prática e reveladora onde vamos unir teoria e ação! Hoje, exploraremos os padrões de projetos com foco especial no Padrão Factory, 
+uma técnica poderosa para abstrair a criação de objetos em Java. Mas não ficaremos só na teoria! Vamos também rolar as mangas e colocar esses conceitos em prática, 
+criando uma tabela no banco de dados e executando nossa primeira operação de inserção (insert). Esta combinação de design sofisticado com operações de banco de dados 
+é uma habilidade essencial para qualquer desenvolvedor que deseje levar seus projetos para o próximo nível. Prepare-se para aprender, implementar e transformar seu 
+conhecimento em resultados concretos!
+
+CREATE SEQUENCE seq_produto
+START WITH 1
+INCREMENT BY 1;
+
+CREATE TABLE tb_produto (
+    cd_produto NUMBER(5) PRIMARY KEY,
+    nm_produto VARCHAR2(50) NOT NULL,
+    ds_produto VARCHAR2(200),
+    vl_produto NUMBER(10, 2),
+    nr_estoque NUMBER(5)
+);
+
+INSERT INTO tb_produto (cd_produto, nm_produto, ds_produto, vl_produto, nr_estoque) VALUES (seq_produto.nextval, 'Camiseta Branca', 'Camiseta de Algodão', 10.99, 100);
+
+public void cadastrar(Produto produto) throws SQLException {
+        PreparedStatement stm = conexao.prepareStatement("INSERT INTO tb_produto (cd_produto, nm_produto, ds_produto, vl_produto, nr_estoque) VALUES (seq_produto.nextval, ?, ?, ?, ?)");
+        stm.setString(1, produto.getNome());
+        stm.setString(2, produto.getDescricao());
+        stm.setDouble(3, produto.getValor());
+        stm.setInt(4, produto.getEstoque());
+       stm.executeUpdate();
+}
+
+
+
+E assim concluímos não apenas o estudo do Padrão Factory, mas também colocamos a mão na massa, integrando-o com operações de banco de dados em Java. 
+Vocês viram como um padrão de projeto pode transformar o processo de criação de objetos e como uma inserção no banco de dados é realizada. 
+Agora, é com vocês: usem esses conhecimentos como uma base sólida para construir aplicações mais dinâmicas e manuteníveis. 
+Continuem praticando, aperfeiçoando-se e até a próxima aula, onde vamos avançar ainda mais na arquitetura de software e na manipulação de dados. 
+
+VIDEO 3
+Bem-vindos a uma sessão essencial para qualquer desenvolvedor Java focado em dados: o Padrão DAO, ou Data Access Object. 
+Hoje, vamos construir os alicerces de uma aplicação robusta, desenvolvendo o model e estruturando o DAO para abstrair e encapsular toda a interação com o banco de dados. 
+Ao implementar e testar o cadastro, vocês ganharão uma compreensão prática de como o DAO pode simplificar e organizar o acesso aos dados, tornando o código mais limpo, 
+mais modular e muito mais fácil de manter. Preparem-se para adicionar mais esta técnica essencial ao seu arsenal de desenvolvimento!
+
+private Produto parseProduto(ResultSet result) throws SQLException {
+        Long id = result.getLong("cd_produto");
+        String nome = result.getString("nm_produto");
+        String descricao = result.getString("ds_produto");
+        double valor = result.getDouble("vl_produto");
+        int estoque = result.getInt("nr_estoque");
+        return new Produto(id, nome, descricao, valor, estoque);
+    }
+
+return parseProduto(result);
+	
+lista.add(parseProduto(result));
+
+E com isso, finalizamos nossa aula sobre o padrão DAO, uma pedra angular na construção de aplicações Java que interagem com bancos de dados. 
+Vocês agora possuem as ferramentas para criar modelos bem estruturados e separar as operações de banco de dados da lógica de negócios com DAOs. 
+Espero que as implementações e testes de hoje tenham iluminado o caminho para um código mais organizado e mantenível. Sigam praticando, 
+e não hesitem em explorar mais sobre padrões de design e arquitetura de software.
+
+VIDEO 4
+Bem-vindos de volta, desenvolvedores! Hoje vamos aprofundar nossa habilidade com o DAO, focando em duas operações cruciais: Pesquisar e Listar. 
+Vamos implementar métodos que não só recuperam dados com eficiência, mas também organizam e apresentam essas informações de forma clara e precisa. 
+A habilidade de pesquisar e listar são fundamentais para qualquer aplicação interativa. Prepare-se para equipar seu DAO com essas ferramentas essenciais 
+e trazer uma nova dimensão de funcionalidade para suas aplicações Java!
+
+E assim concluímos mais uma etapa essencial no desenvolvimento de aplicações Java robustas e eficientes. 
+Hoje, vocês implementaram as funcionalidades de pesquisa e listagem dentro do padrão DAO, habilidades indispensáveis para interagir com dados de maneira dinâmica. 
+Com essas ferramentas, suas aplicações agora podem oferecer uma interface de usuário mais interativa e uma experiência de consulta de dados mais rica. 
+Continuem explorando, praticando e inovando. Até nosso próximo encontro, onde vamos continuar a expandir as fronteiras do que vocês podem fazer com Java. 
+Sigam codificando e criando, e lembrem-se: cada problema é uma oportunidade para criar uma nova solução. 
+
+VIDEO 5
+Sejam bem-vindos, desenvolvedores, à continuação da nossa série sobre DAOs em Java! Nesta aula, vamos dominar as operações de ‘Editar’ e ‘Remover’. 
+Estas são ações fundamentais para a manutenção de qualquer aplicativo que gerencia dados, permitindo atualizações precisas e a eliminação segura de registros. 
+Hoje, vocês aprenderão como implementar esses métodos críticos dentro do padrão DAO, garantindo que suas aplicações possam responder às mudanças de maneira ágil e confiável. 
+Preparem-se para adicionar mais estas habilidades essenciais ao seu arsenal de desenvolvedor!
+
+Agora que dominamos as operações de editar e remover no DAO, estamos equipados com um conjunto completo de ferramentas para gerenciar dados de maneira eficaz. 
+Essas habilidades são vitais para manter nossas aplicações dinâmicas, permitindo que respondam às mudanças e necessidades dos usuários. 
+Continuem praticando, refinando suas habilidades e explorando novas possibilidades com o que aprenderam hoje.
+
+VIDEO 6
+Olá e bem-vindos a um ponto crucial de nossa série de tutoriais: a implementação de um menu de usuário para operações CRUD em Java. 
+Nesta aula, vamos consolidar tudo o que aprendemos sobre a manipulação de dados e fornecer aos nossos usuários uma interface clara e funcional para que eles possam criar, 
+ler, atualizar e deletar registros facilmente. Preparar um menu intuitivo é essencial para a usabilidade de qualquer aplicação. 
+Então, vamos arregaçar as mangas e criar uma ponte entre o back-end e as ações do usuário, tornando nossas aplicações não apenas poderosas, mas também prazerosas de usar.
+
+Agora que nosso menu está em pleno funcionamento, dando vida ao CRUD na ponta dos dedos do usuário, chegamos ao fim de mais uma etapa do nosso curso. 
+Vocês aprenderam a criar uma interface de usuário intuitiva e eficiente, fundamental para qualquer aplicação. 
+Este menu é a porta de entrada para o poderoso mundo da manipulação de dados que vocês construíram até agora. 
+Continuem praticando, explorando e integrando essas habilidades no seu arsenal de desenvolvimento. 
+Até nosso próximo encontro, sigam com a certeza de que cada linha de código leva vocês mais perto da maestria em Java
